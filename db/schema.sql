@@ -1,6 +1,11 @@
+DROP DATABASE IF EXISTS employee_tracker_db;
+CREATE DATABASE employee_tracker_db;
 DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS role;
 DROP TABLE IF EXISTS employee; 
+
+\c employee_tracker_db;
+
 
 CREATE TABLE department (
     id SERIAL PRIMARY KEY,
@@ -10,7 +15,7 @@ CREATE TABLE department (
 CREATE TABLE role (
     id SERIAL PRIMARY KEY,
     title VARCHAR(30),
-    salary DECIMAL NOT NULL,
+    salary INTEGER NOT NULL,
     department_id INTEGER NOT NULL,
     FOREIGN KEY (department_id) REFERENCES department(id)
 );
