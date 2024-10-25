@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "inquirer": "^12.0.0",
+    "pg": "^8.13.1"
+  },
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "A command line application to manage a company's employee database using Node.js, Inquirer, and Postgres",
+  "main": "index.js",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "employee",
+    "tracker"
+  ],
+  "author": "Seth Burrow",
+  "license": "MIT"
+}
