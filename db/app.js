@@ -1,13 +1,35 @@
 const inquirer = require('inquirer');
+const { Client } = require('pg');
+
+const client = new Client({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'employee_tracker_db',
+    password: 'Rootroot',
+    port: 5432,
+});
+
+client.connect()
+    .then(() => console.log('Connected to the database'))
+    .catch(err => console.error('Connection error', err.stack));
 
 
 function viewDepartments() {
-    console.log('Departments');
-    console.table(departments);
-    
+    const query = 'SELECT * FROM department';
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Error retrieving departments:', err);
+            return;
+        }
+        console.log('Departments:');
+        console.table(results); 
+    });
 }
 
-inquirer.prompt ([
+function menu() {
+inquirer
+.prompt ([
     {
         type: 'list',
         name: 'initialAction',
@@ -21,11 +43,14 @@ inquirer.prompt ([
             'Add an employee',
             'Update an employee Role',
         ],
-
     }
 ]).then(answers => {
     if(answers.initialAction === 'View all deprtments') {
         viewDepartments();
     }
 });
+}
+
+menu();
+
 
