@@ -1,5 +1,11 @@
 const inquirer = require('inquirer');
-const { viewDepartments } = require('./db/index')
+
+
+function viewDepartments() {
+    console.log('Departments');
+    console.table(departments);
+    
+}
 
 inquirer.prompt ([
     {
