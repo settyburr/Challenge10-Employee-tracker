@@ -69,5 +69,5 @@ VALUES
         (26, 'Dawn', 'Krink', 24, 2),
         (27, 'Len', 'Hugeff', 25, 5),
         (28, 'Dewey', 'Burnout', 26, 7),
-        (29, 'George', 'Williams', 24, 9),
+        (29, 'George', 'Williams', 25, 9),
         (30, 'David', 'Sanderson', 25, 5);
