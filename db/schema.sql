@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS department;
 DROP TABLE IF EXISTS role;
 DROP TABLE IF EXISTS employee; 
 
-\c employee_tracker_db;
+
 
 
 CREATE TABLE department (
